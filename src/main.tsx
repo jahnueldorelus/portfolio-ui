@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { uiRoutes } from "@components/header/ui-routes.ts";
-import "./index.css";
 
 const router = createBrowserRouter([
   {
