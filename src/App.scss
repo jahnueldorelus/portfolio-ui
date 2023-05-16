@@ -162,5 +162,5 @@ input,
 textarea,
 select,
 a {
-  @include setOutlineColor(#dcdcfa);
+  @include setOutlineColor(white);
 }

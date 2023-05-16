@@ -95,7 +95,7 @@ export const AppHeader = () => {
             <p className="m-0 fs-5">Menu</p>
             <CloseButton
               className="m-0 bg-light"
-              variant="white"
+              variant="light"
               aria-label="Close navigation menu"
               onClick={onMobileMenuToggle}
             />
