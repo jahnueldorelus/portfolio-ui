@@ -1,17 +1,20 @@
 import { Fragment } from "react";
 import Container from "react-bootstrap/Container";
 import { Outlet } from "react-router-dom";
+import { AppHeader } from "@components/header";
 import "./App.scss";
 
 function App() {
   return (
     <Fragment>
       {/* Header of the application */}
-      <header></header>
+      <header>
+        <AppHeader />
+      </header>
 
       {/* Main content of the application */}
       <main>
-        <Container>
+        <Container className="py-5">
           <Outlet />
         </Container>
       </main>

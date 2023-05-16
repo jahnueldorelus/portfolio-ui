@@ -1,0 +1,41 @@
+.app-nav {
+  &-brand {
+    width: 15.625rem;
+  }
+
+  .nav-desktop {
+    ul {
+      li {
+        a {
+          &.active {
+            background-color: var(--bs-secondary);
+          }
+
+          &:hover:not(.active) {
+            background-color: var(--bs-quaternary);
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-offcanvas {
+  width: 15rem;
+
+  ul {
+    li {
+      a {
+        &.active {
+          color: var(--bs-tertiary);
+          background-color: var(--bs-primary);
+        }
+
+        &:hover:not(.active) {
+          color: var(--bs-tertiary);
+          background-color: var(--bs-quaternary);
+        }
+      }
+    }
+  }
+}
