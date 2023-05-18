@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { uiRoutes } from "@components/header/ui-routes.ts";
+import { Home } from "@views/home/index.tsx";
+import { Projects } from "@views/projects/index.tsx";
 
 const router = createBrowserRouter([
   {
@@ -11,11 +13,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: uiRoutes.home,
-        element: <p>I'm the home page!</p>,
+        element: <Home />,
       },
       {
         path: uiRoutes.projects,
-        element: <p>I'm the projects page!</p>,
+        element: <Projects />,
       },
     ],
   },

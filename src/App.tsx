@@ -1,10 +1,18 @@
-import { Fragment } from "react";
-import Container from "react-bootstrap/Container";
+import { Fragment, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { AppHeader } from "@components/header";
+import WebFont from "webfontloader";
 import "./App.scss";
 
 function App() {
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Bungee Shade", "Neucha", "Londrina Solid"],
+      },
+    });
+  }, []);
+
   return (
     <Fragment>
       {/* Header of the application */}
@@ -13,10 +21,8 @@ function App() {
       </header>
 
       {/* Main content of the application */}
-      <main>
-        <Container className="py-5">
+      <main className="py-5">
           <Outlet />
-        </Container>
       </main>
 
       {/* Footer of the application */}

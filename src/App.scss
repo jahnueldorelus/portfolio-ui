@@ -1,3 +1,14 @@
+// Fonts
+.text-font-primary {
+  font-family: "Bungee Shade";
+}
+.text-font-secondary {
+  font-family: "Neucha";
+}
+.text-font-tertiary {
+  font-family: "Londrina Solid";
+}
+
 // Sets default styles of a button
 button {
   border: none;
@@ -70,6 +81,7 @@ $primary: #242424;
 $secondary: #8685ef;
 $tertiary: #faf8ff;
 $quaternary: #3a3847;
+$quinary: #bab9f6;
 $success: #198754;
 $info: #0dcaf0;
 $warning: #ffc107;
@@ -82,6 +94,7 @@ $theme-colors: (
   "secondary": $secondary,
   "tertiary": $tertiary,
   "quaternary": $quaternary,
+  "quinary": $quinary,
   "success": $success,
   "info": $info,
   "warning": $warning,
@@ -114,7 +127,7 @@ $theme-colors: (
 // @import "@bootstrap/scss/button-group";
 @import "@bootstrap/scss/nav";
 @import "@bootstrap/scss/navbar";
-// @import "@bootstrap/scss/card";
+@import "@bootstrap/scss/card";
 // @import "@bootstrap/scss/accordion";
 // @import "@bootstrap/scss/breadcrumb";
 // @import "@bootstrap/scss/pagination";
