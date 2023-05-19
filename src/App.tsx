@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { AppHeader } from "@components/header";
 import WebFont from "webfontloader";
 import "./App.scss";
+import { AppFooter } from "@components/footer";
 
 function App() {
   useEffect(() => {
@@ -22,11 +23,13 @@ function App() {
 
       {/* Main content of the application */}
       <main className="py-5">
-          <Outlet />
+        <Outlet />
       </main>
 
       {/* Footer of the application */}
-      <footer></footer>
+      <footer>
+        <AppFooter />
+      </footer>
     </Fragment>
   );
 }
