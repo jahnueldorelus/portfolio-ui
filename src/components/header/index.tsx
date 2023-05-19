@@ -4,6 +4,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import CloseButton from "react-bootstrap/CloseButton";
 import Nav from "react-bootstrap/Nav";
 import AppLogo from "@assets/portfolio-logo.png";
+import AppLogoShort from "@assets/portfolio-logo-short.png";
 import { NavLink } from "react-router-dom";
 import { uiRoutes } from "./ui-routes";
 import { useState } from "react";
@@ -59,19 +60,31 @@ export const AppHeader = () => {
 
   return (
     <Navbar className="app-nav pb-0" expand="sm">
-      <Container>
+      <Container className="d-flex flex-row-reverse flex-sm-row">
         <NavLink className="rounded" to={uiRoutes.home}>
-          <Navbar.Brand className="p-0">
+          {/* Logo for smaller screens */}
+          <Navbar.Brand className="p-0 me-0 d-sm-none">
             <img
-              className="app-nav-brand me-2"
+              className="app-nav-brand w-fit"
+              src={AppLogoShort}
+              alt="jahnuel dorelus logo"
+              height={55}
+            />
+          </Navbar.Brand>
+
+          {/* Logo for larger screens */}
+          <Navbar.Brand className="p-0 me-0 d-none d-sm-block">
+            <img
+              className="app-nav-brand"
               src={AppLogo}
               alt="jahnuel dorelus logo"
+              height={55}
             />
           </Navbar.Brand>
         </NavLink>
 
         <Navbar.Toggle
-          className="px-2 mx-2 w-fit bg-secondary border-transparent"
+          className="px-2 w-fit bg-secondary border-transparent"
           onClick={onMobileMenuToggle}
           label="toggle navigation menu"
           aria-controls={mobileNavId}
@@ -95,7 +108,7 @@ export const AppHeader = () => {
             <p className="m-0 fs-5">Menu</p>
             <CloseButton
               className="m-0 bg-light"
-              variant="light"
+              variant="white"
               aria-label="Close navigation menu"
               onClick={onMobileMenuToggle}
             />
