@@ -77,7 +77,9 @@ export const Home = () => {
             height={300}
           />
           <Card.Body>
-            <Card.Title className="text-quinary fs-4">{cardTitle}</Card.Title>
+            <Card.Title className="text-quinary fs-4 text-font-tertiary">
+              {cardTitle}
+            </Card.Title>
             <Card.Text>{cardText}</Card.Text>
           </Card.Body>
         </Card>
@@ -106,12 +108,17 @@ export const Home = () => {
       <Container className="d-flex flex-column-reverse flex-lg-row text-font-tertiary">
         <div className="my-4 me-5 d-flex justify-content-center align-items-center w-100">
           <div>
-            {createIntroColoredText("Creates with", "React", "#6eacec", false)}
-            {createIntroColoredText("TypeScript", "Developer", "#41e643", true)}
-            {createIntroColoredText("Builds with", "Node.js", "#ec706e", false)}
-            {createIntroColoredText("Express.js", "Lover", "#e5e641", true)}
+            {createIntroColoredText("Creator with", "React", "#6eacec", false)}
             {createIntroColoredText(
-              "Explores new",
+              "Builder with",
+              "Node.js",
+              "#ec706e",
+              false
+            )}
+            {createIntroColoredText("Express.js", "Architect", "#e5e641", true)}
+            {createIntroColoredText("TypeScript", "Developer", "#41e643", true)}
+            {createIntroColoredText(
+              "Explorer of new",
               "Technologies",
               "white",
               false
@@ -121,7 +128,8 @@ export const Home = () => {
         <div className="d-flex justify-content-center w-100">
           <img
             src={JahnuelDorelusImg}
-            width={450}
+            width="100%"
+            style={{ maxWidth: 450 }}
             alt="portrait of Jahnuel Dorelus"
           />
         </div>
@@ -129,14 +137,16 @@ export const Home = () => {
 
       {/* Hands on learning details */}
       <Container className="my-5 fs-5 d-flex flex-column justify-content-center">
-        <h3 className="mt-5 text-center">Tech explorer and hands-on learner</h3>
-        <p className="text-secondary text-center">
+        <h3 className="mt-5 text-center text-font-tertiary">
+          Tech explorer and hands-on learner
+        </h3>
+        <p className="text-secondary fs-4 text-center text-font-secondary">
           I love tinkering, learning, and creating new services and
           technologies.
         </p>
 
         <Row
-          className="mb-5 d-flex w-fit text-font-tertiary"
+          className="mb-5 d-flex w-fit text-font-secondary"
           xs={1}
           md={2}
           xl={3}
@@ -145,44 +155,44 @@ export const Home = () => {
             ServerRackCabinetImg,
             "the inside of a self-built server rack cabinet",
             "Rack Server Cabinet Build",
-            "To start the process of creating my own hosting service, I needed a server rack to house my equipment. A few trips to Home Depot and a lot of drilling led to a DIY server rack cabinet."
+            "To create a local hosting service, I needed a server rack to house my equipment. A few trips to Home Depot and a lot of drilling led to a DIY server rack cabinet."
           )}
           {createHandsOnLearningCard(
             ProxmoxVEImg,
             "proxmox virtual environment application management screen",
             "Proxmox VE",
-            "To host all of my services on a single machine, I utilize Proxmox VE which allows me to setup many servers and services for both personal and business use."
+            "To host all of my services on a single machine, I utilize Proxmox VE to set up many servers and services for personal and business use."
           )}
           {createHandsOnLearningCard(
             CloudflareImg,
             "cloudflare application overview screen",
             "Cloudflare",
-            "To keep all of my public web applications secure, I use Cloudflare as my hosting service as it provides content delivery network, cloud cybersecurity, DDoS mitigation, and ICANN-accredited domain registration services."
+            "To keep all of my public web applications secure, I use Cloudflare as my hosting service, which provides a content delivery network, cloud cybersecurity, DDoS mitigation, and ICANN-accredited domain registration services."
           )}
           {createHandsOnLearningCard(
             SingleSignOnImg,
             "JayCloud application login screen",
             "Single Sign-On",
-            "Authentication is one of the most critical features in user-based applications. To understand it's lifecycle, I've created my own authentication service (token and cookie based) that allows a user to sign into all current and future applications I create."
+            "Authentication is one of the most critical features in user-based applications. To understand its lifecycle, I've created an authentication service (token and cookie-based) that allows a user to sign into all current and future applications I create."
           )}
           {createHandsOnLearningCard(
             Pm2Img,
             "PM2 process monitor ui",
             "PM2",
-            "With PM2, all of my services are hosted using this production grade daemon process manager. Combining this with Proxmox VE, hosting any service on my server is easy as pie."
+            "All of my services hosted are using this production-grade daemon process manager. Combining this with Proxmox VE, hosting any service on my server is as easy as pie."
           )}
           {createHandsOnLearningCard(
             GithubImg,
             "the inside of a self-built server rack cabinet",
             "Github",
-            "This is the motherland where all of my projects are born and get an education before taking their first step into the real world. Some projects go to college while others ... well ... they completely drop out ( ...in middle school)."
+            "This is the motherland where all my projects are born and get an education before taking their first step into the real world. Some become successful while others ... well ... completely drop out ... before high school."
           )}
         </Row>
       </Container>
 
       {/* MERN stack */}
       <div className="py-4 mt-3 mt-lg-5 bg-secondary text-font-secondary">
-        <h3 className="mb-0 text-center">
+        <h3 className="mb-0 text-center text-font-tertiary">
           As a TypeScript developer, I build using the MERN Stack
         </h3>
         <Container className="pt-4 d-flex flex-wrap justify-content-evenly">
