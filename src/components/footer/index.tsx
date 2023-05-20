@@ -22,6 +22,7 @@ export const AppFooter = () => {
             src={LinkedInImg}
             alt="linkedin logo"
             width="30"
+            rel="nofollow"
           />
         </a>
       </Fragment>
