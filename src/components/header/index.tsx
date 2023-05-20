@@ -95,6 +95,7 @@ export const AppHeader = () => {
           <ul className="p-0 m-0 d-flex justify-content-end w-100">
             {createNavItem(uiRoutes.home, "Home")}
             {createNavItem(uiRoutes.projects, "Projects")}
+            {createNavItem(uiRoutes.resume, "Resume")}
           </ul>
         </Nav>
 
@@ -119,6 +120,7 @@ export const AppHeader = () => {
             <Nav onSelect={onMobileMenuToggle} as="ul">
               {createOffCanvasNavItem(uiRoutes.home, "Home")}
               {createOffCanvasNavItem(uiRoutes.projects, "Projects")}
+              {createOffCanvasNavItem(uiRoutes.resume, "Resume")}
             </Nav>
           </Offcanvas.Body>
         </Offcanvas>

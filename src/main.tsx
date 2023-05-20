@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { uiRoutes } from "@components/header/ui-routes.ts";
 import { Home } from "@views/home/index.tsx";
 import { Projects } from "@views/projects/index.tsx";
+import { Resume } from "@views/resume/index.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: uiRoutes.projects,
         element: <Projects />,
+      },
+      {
+        path: uiRoutes.resume,
+        element: <Resume />,
       },
     ],
   },
