@@ -30,7 +30,7 @@ export const AppHeader = () => {
     return (
       <Nav.Item className="me-3 d-none d-md-block" as="li">
         <NavLink
-          className="px-2 py-2 rounded fs-5 text-tertiary text-decoration-none"
+          className="px-2 py-2 rounded fs-4 text-tertiary text-decoration-none"
           to={itemLink}
         >
           {itemName}
