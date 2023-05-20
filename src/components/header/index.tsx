@@ -61,14 +61,15 @@ export const AppHeader = () => {
   return (
     <Navbar className="app-nav pb-0" expand="sm">
       <Container className="d-flex flex-row-reverse flex-sm-row">
-        <NavLink className="rounded" to={uiRoutes.home}>
+        <NavLink className="rounded w-fit" to={uiRoutes.home}>
           {/* Logo for smaller screens */}
-          <Navbar.Brand className="p-0 me-0 d-sm-none">
+          <Navbar.Brand className="p-0 me-0  d-sm-none ">
             <img
               className="app-nav-brand w-fit"
               src={AppLogoShort}
               alt="jahnuel dorelus logo"
               height={55}
+              width={55}
             />
           </Navbar.Brand>
 
@@ -99,7 +100,7 @@ export const AppHeader = () => {
 
         <Offcanvas
           id={mobileNavId}
-          className="bg-secondary w-fit"
+          className="bg-quinary w-fit"
           placement="start"
           show={isOffcanvasVisible}
           onHide={onMobileMenuToggle}

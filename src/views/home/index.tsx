@@ -18,35 +18,30 @@ import NodeImg from "@assets/node-js.png";
 export const Home = () => {
   /**
    * Creates an intro sentence with colored text.
-   * @param textOne The first part of the text
-   * @param textTwo The second part of the text
-   * @param textColor The color to use when coloring the text
-   * @param colorTextOne Determines if the first or second
-   *                     text will be colored
+   * @param regularText The regular text to display
+   * @param specialTexts The special texts to show with its associated color
    */
   const createIntroColoredText = (
-    textOne: string,
-    textTwo: string,
-    textColor: string,
-    colorTextOne: boolean
+    regularText: string,
+    specialTexts: Array<{ text: string; color: string }>
   ) => {
-    const textColorStyle = { color: textColor };
-
     return (
-      <h1 className="text-secondary fw-bold">
-        <span
-          className={`me-3 ${colorTextOne ? "fs-1 text-font-primary" : "fs-2"}`}
-          style={colorTextOne ? textColorStyle : {}}
-        >
-          {textOne}
-        </span>
-        <span
-          className={!colorTextOne ? "fs-1 text-font-primary" : "fs-2"}
-          style={!colorTextOne ? textColorStyle : {}}
-        >
-          {textTwo}
-        </span>
-      </h1>
+      <Fragment>
+        <p className="mb-0 fs-4 text-tertiary fw-bold">{regularText}:</p>
+        <p className="px-1 bg-primary rounded">
+          {specialTexts.map((textInfo, index) => {
+            return (
+              <span
+                key={index}
+                className="px-2 d-block fs-2 text-font-primary text-auto-hyphens"
+                style={{ color: textInfo.color }}
+              >
+                {textInfo.text}
+              </span>
+            );
+          })}
+        </p>
+      </Fragment>
     );
   };
 
@@ -95,10 +90,17 @@ export const Home = () => {
    */
   const createMERNCard = (img: string, imgAlt: string, imgText: string) => {
     return (
-      <div className="mx-5">
-        <img src={img} alt={imgAlt} height={120} />
-        <p className="mt-2 mb-0 fs-5 text-center fw-bold">{imgText}</p>
-      </div>
+      <Col className="d-flex justify-content-center">
+        <div className="py-3 w-fit">
+          <img
+            className="px-3 px-sm-0"
+            src={img}
+            alt={imgAlt}
+            style={{ maxHeight: 120, maxWidth: 120 }}
+          />
+          <p className="mt-2 mb-0 fs-5 text-center fw-bold">{imgText}</p>
+        </div>
+      </Col>
     );
   };
 
@@ -107,29 +109,27 @@ export const Home = () => {
       {/* Intro */}
       <Container className="d-flex flex-column-reverse flex-lg-row text-font-tertiary">
         <div className="my-4 me-5 d-flex justify-content-center align-items-center w-100">
-          <div>
-            {createIntroColoredText("Creator with", "React", "#6eacec", false)}
-            {createIntroColoredText(
-              "Builder with",
-              "Node.js",
-              "#ec706e",
-              false
-            )}
-            {createIntroColoredText("Express.js", "Architect", "#e5e641", true)}
-            {createIntroColoredText("TypeScript", "Developer", "#41e643", true)}
-            {createIntroColoredText(
-              "Explorer of new",
-              "Technologies",
-              "white",
-              false
-            )}
+          <div className="p-4 pb-2 bg-secondary rounded w-100">
+            {createIntroColoredText("Website creator using", [
+              { text: "React", color: "#6eacec" },
+            ])}
+            {createIntroColoredText("API builder with", [
+              { text: "Node.js", color: "#ec706e" },
+              { text: "Express.js", color: "#e5e641" },
+            ])}
+            {createIntroColoredText("Developer using", [
+              { text: "TypeScript", color: "#41e643" },
+            ])}
+            {createIntroColoredText("Explorer of new", [
+              { text: "Technologies", color: "white" },
+            ])}
           </div>
         </div>
         <div className="d-flex justify-content-center w-100">
           <img
             src={JahnuelDorelusImg}
             width="100%"
-            style={{ maxWidth: 450 }}
+            style={{ maxWidth: 450, objectFit: "contain" }}
             alt="portrait of Jahnuel Dorelus"
           />
         </div>
@@ -137,10 +137,10 @@ export const Home = () => {
 
       {/* Hands on learning details */}
       <Container className="my-5 fs-5 d-flex flex-column justify-content-center">
-        <h3 className="mt-5 text-center text-font-tertiary">
+        <h3 className="mx-3 mt-5 text-center text-font-tertiary">
           Tech explorer and hands-on learner
         </h3>
-        <p className="text-secondary fs-4 text-center text-font-secondary">
+        <p className="mx-3 text-secondary fs-4 text-center text-font-secondary">
           I love tinkering, learning, and creating new services and
           technologies.
         </p>
@@ -192,14 +192,16 @@ export const Home = () => {
 
       {/* MERN stack */}
       <div className="py-4 mt-3 mt-lg-5 bg-secondary text-font-secondary">
-        <h3 className="mb-0 text-center text-font-tertiary">
+        <h3 className="mx-3 mb-0 text-center text-font-tertiary">
           As a TypeScript developer, I build using the MERN Stack
         </h3>
-        <Container className="pt-4 d-flex flex-wrap justify-content-evenly">
-          {createMERNCard(MongoImg, "mongo database logo", "Mongo")}
-          {createMERNCard(ExpressImg, "express js logo", "Express.js")}
-          {createMERNCard(ReactImg, "react logo", "React")}
-          {createMERNCard(NodeImg, "node js logo", "Node.js")}
+        <Container>
+          <Row className="pt-4" xs={2} md={4}>
+            {createMERNCard(MongoImg, "mongo database logo", "Mongo")}
+            {createMERNCard(ExpressImg, "express js logo", "Express.js")}
+            {createMERNCard(ReactImg, "react logo", "React")}
+            {createMERNCard(NodeImg, "node js logo", "Node.js")}
+          </Row>
         </Container>
       </div>
     </Fragment>

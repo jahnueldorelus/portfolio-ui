@@ -76,6 +76,16 @@ img {
   width: fit-content !important;
 }
 
+// Sets an element to break a word at the end of the line and use hyphens
+.text-auto-hyphens {
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 // 1. BOOTSTRAP VARIABLE OVERIDES
 $primary: #242424;
 $secondary: #8685ef;
