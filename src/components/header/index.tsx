@@ -28,7 +28,7 @@ export const AppHeader = () => {
    */
   const createNavItem = (itemLink: string, itemName: string) => {
     return (
-      <Nav.Item className="me-3 d-none d-sm-block" as="li">
+      <Nav.Item className="me-3 d-none d-md-block" as="li">
         <NavLink
           className="px-2 py-2 rounded fs-5 text-tertiary text-decoration-none"
           to={itemLink}
@@ -59,8 +59,8 @@ export const AppHeader = () => {
   };
 
   return (
-    <Navbar className="app-nav pb-0" expand="sm">
-      <Container className="d-flex flex-row-reverse flex-sm-row">
+    <Navbar className="app-nav pb-0" expand="md">
+      <Container className="d-flex flex-row-reverse flex-md-row">
         <NavLink className="rounded w-fit" to={uiRoutes.home}>
           {/* Logo for smaller screens */}
           <Navbar.Brand className="p-0 me-0  d-sm-none ">
@@ -110,7 +110,6 @@ export const AppHeader = () => {
             <p className="m-0 fs-5">Menu</p>
             <CloseButton
               className="m-0 bg-light"
-              variant="white"
               aria-label="Close navigation menu"
               onClick={onMobileMenuToggle}
             />
