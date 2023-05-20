@@ -52,19 +52,21 @@ export const Resume = () => {
 
   /**
    * Creates a resume info card JSX for an event.
+   * @param key The card's key
    * @param title The title of the card
    * @param year The year the event occurred
    * @param text The card info
    * @param location The location where the event occurred
    */
   const createEventInfoCard = (
+    key: string,
     title: string,
     year: string,
     text: string,
     location: string
   ) => {
     return (
-      <Col className="d-flex">
+      <Col className="d-flex" key={key}>
         <div className="m-2 bg-quaternary w-100 rounded">
           <div className="p-3 d-flex flex-column justify-content-between h-100">
             <div className="mb-2 d-flex flex-column-reverse flex-sm-row flex-md-column-reverse flex-lg-row justify-content-between align-items-start">
@@ -94,8 +96,9 @@ export const Resume = () => {
           Experience
         </p>
         <Row className="mb-5 fs-5 text-font-secondary" xs={1} md={2}>
-          {experiences.map((experience) => {
+          {experiences.map((experience, index) => {
             return createEventInfoCard(
+              experience.companyName + "-" + index,
               experience.position,
               experience.date,
               experience.companyName,
@@ -111,8 +114,9 @@ export const Resume = () => {
           Education
         </p>
         <Row className="mb-5 fs-5 text-font-secondary" xs={1} md={2}>
-          {degrees.map((degree) => {
+          {degrees.map((degree, index) => {
             return createEventInfoCard(
+              degree.schoolName + "-" + index,
               degree.schoolName,
               degree.year,
               degree.name,
