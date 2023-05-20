@@ -71,6 +71,7 @@ export const Projects = () => {
                   style={{ objectFit: "cover" }}
                   height={300}
                 />
+
                 <Card.Body>
                   <Badge
                     className="mb-3"
@@ -84,9 +85,10 @@ export const Projects = () => {
                   </Card.Title>
                   <Card.Text>{project.description}</Card.Text>
                 </Card.Body>
-                <Card.Footer className="d-flex justify-content-end py-3 border-0">
+
+                <Card.Footer className="d-flex justify-content-end py-3 border-0 bg-transparent">
                   <Button
-                    className="px-4 py-2 bg-secondary"
+                    className="px-4 py-2 bg-secondary border-0"
                     aria-label={`Open the website ${project.name}`}
                     onClick={onOpenBtnClick(project.link)}
                   >

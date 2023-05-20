@@ -184,7 +184,7 @@ export const Home = () => {
           {createHandsOnLearningCard(
             GithubImg,
             "the inside of a self-built server rack cabinet",
-            "Github",
+            "GitHub",
             "This is the motherland where all my projects are born and get an education before taking their first step into the real world. Some become successful while others ... well ... completely drop out ... before high school."
           )}
         </Row>

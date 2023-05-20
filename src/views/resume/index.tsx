@@ -29,25 +29,59 @@ export const Resume = () => {
     location: string;
     position: string;
     date: string;
+    summaryList: string[];
   }> = [
     {
       companyName: "Centerboard",
       date: "March-May 2022",
       location: "Danbury, Connecticut",
       position: "Junior Software Engineer",
+      summaryList: [
+        "Performed User Interface (UI) audit of application",
+        "Produced UI following design from Figma",
+        "Utilized Atlassian tools",
+      ],
     },
     {
       companyName: "Gordon College",
       date: "June-July 2020",
       location: "Wenham, Massachusetts",
       position: "Software Development Intern",
+      summaryList: [
+        "Redesigned React-based web application",
+        "Identified and removed various bugs and errors within the application",
+      ],
     },
     {
       companyName: "Gordon College",
       date: "June-July 2019",
       location: "Wenham, Massachusetts",
       position: "Practicum Software Developer",
+      summaryList: [
+        "Converted a React-based web app into a PWA (progressive web application)",
+        "Refactored and updated application to follow SEO best practices",
+        "Revised, modularized, and updated old code",
+      ],
     },
+  ];
+
+  const technicalSkills = [
+    "HTML",
+    "CSS",
+    "SCSS",
+    "Bootstrap",
+    "TypeScript",
+    "ES5",
+    "React",
+    "Node.js",
+    "Express.js",
+    "JSON",
+    "Agile",
+    "GitHub",
+    "Git",
+    "Windows",
+    "MacOS",
+    "Unix CLI",
   ];
 
   /**
@@ -57,16 +91,18 @@ export const Resume = () => {
    * @param year The year the event occurred
    * @param text The card info
    * @param location The location where the event occurred
+   * @param extraTextList Extra info to show in the card as a list
    */
   const createEventInfoCard = (
     key: string,
     title: string,
     year: string,
     text: string,
-    location: string
+    location: string,
+    extraTextList?: string[]
   ) => {
     return (
-      <Col className="d-flex" key={key}>
+      <Col className="mb-2 d-flex" key={key}>
         <div className="m-2 bg-quaternary w-100 rounded">
           <div className="p-3 d-flex flex-column justify-content-between h-100">
             <div className="mb-2 d-flex flex-column-reverse flex-sm-row flex-md-column-reverse flex-lg-row justify-content-between align-items-start">
@@ -78,7 +114,19 @@ export const Resume = () => {
               </Badge>
             </div>
 
-            <p>{text}</p>
+            <div className={extraTextList ? "mb-0" : "mb-3"}>
+              <p>{text}</p>
+              {extraTextList && (
+                <ul className="fs-6">
+                  {extraTextList.map((info, index) => (
+                    <li className="mb-0" key={index}>
+                      {info}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
             <p className="mb-0 text-quinary">{location}</p>
           </div>
         </div>
@@ -102,7 +150,8 @@ export const Resume = () => {
               experience.position,
               experience.date,
               experience.companyName,
-              experience.location
+              experience.location,
+              experience.summaryList
             );
           })}
         </Row>
@@ -124,6 +173,24 @@ export const Resume = () => {
             );
           })}
         </Row>
+      </div>
+
+      {/* Technical Skills */}
+      <div className="px-2">
+        <p className="mx-2 mb-2 fs-2 text-font-tertiary text-quinary">
+          Technical Skills
+        </p>
+        <div className="px-2 fs-5 text-font-secondary d-flex flex-wrap justify-content-start">
+          {technicalSkills.map((skill, index) => {
+            return (
+              <p className="mb-0">
+                <Badge className="me-3 mb-3 fs-5" bg="secondary" key={index}>
+                  {skill}
+                </Badge>
+              </p>
+            );
+          })}
+        </div>
       </div>
     </Container>
   );
