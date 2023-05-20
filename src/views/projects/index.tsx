@@ -57,9 +57,9 @@ export const Projects = () => {
         md={2}
         lg={2}
       >
-        {projectsList.map((project) => {
+        {projectsList.map((project, index) => {
           return (
-            <Col className="px-3 d-flex justify-content-center">
+            <Col className="px-3 d-flex justify-content-center" key={index}>
               <Card
                 className="my-4 bg-quaternary border-0"
                 style={{ maxWidth: "25rem" }}
