@@ -76,6 +76,7 @@ export const Resume = () => {
     "Node.js",
     "Express.js",
     "JSON",
+    "ARIA",
     "Agile",
     "GitHub",
     "Git",

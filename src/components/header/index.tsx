@@ -46,7 +46,7 @@ export const AppHeader = () => {
    */
   const createOffCanvasNavItem = (itemLink: string, itemName: string) => {
     return (
-      <Nav.Item className="mx-1 mb-2 fs-5 rounded" as="li">
+      <Nav.Item className="mx-1 mb-2 rounded" as="li">
         <NavLink
           className="d-block px-3 py-1 rounded text-decoration-none"
           to={itemLink}
@@ -59,9 +59,13 @@ export const AppHeader = () => {
   };
 
   return (
-    <Navbar className="app-nav pb-0" expand="md">
+    <Navbar className="app-nav pb-0 text-font-tertiary" expand="md">
       <Container className="d-flex flex-row-reverse flex-md-row">
-        <NavLink className="rounded w-fit" to={uiRoutes.home}>
+        <NavLink
+          className="rounded w-fit"
+          to={uiRoutes.home}
+          aria-label="Go to home page"
+        >
           {/* Logo for smaller screens */}
           <Navbar.Brand className="p-0 me-0  d-sm-none ">
             <img
@@ -88,6 +92,7 @@ export const AppHeader = () => {
           className="px-2 w-fit bg-secondary border-transparent"
           onClick={onMobileMenuToggle}
           label="toggle navigation menu"
+          aria-expanded={isOffcanvasVisible}
           aria-controls={mobileNavId}
         />
 
@@ -101,15 +106,15 @@ export const AppHeader = () => {
 
         <Offcanvas
           id={mobileNavId}
-          className="bg-quinary w-fit"
+          className="bg-quinary w-fit text-font-tertiary fs-4"
           placement="start"
           show={isOffcanvasVisible}
           onHide={onMobileMenuToggle}
         >
           <Offcanvas.Header className="px-4 bg-primary">
-            <p className="m-0 fs-5">Menu</p>
+            <p className="m-0">Menu</p>
             <CloseButton
-              className="m-0 bg-light"
+              className="m-0 bg-light fs-6"
               aria-label="Close navigation menu"
               onClick={onMobileMenuToggle}
             />
