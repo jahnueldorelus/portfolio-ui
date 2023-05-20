@@ -17,7 +17,7 @@ function App() {
   return (
     <Fragment>
       {/* Header of the application */}
-      <header>
+      <header className="px-2">
         <AppHeader />
       </header>
 
@@ -27,7 +27,7 @@ function App() {
       </main>
 
       {/* Footer of the application */}
-      <footer>
+      <footer className="px-2">
         <AppFooter />
       </footer>
     </Fragment>

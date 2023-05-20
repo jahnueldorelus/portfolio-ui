@@ -92,7 +92,7 @@ $secondary: #8685ef;
 $tertiary: #faf8ff;
 $quaternary: #3a3847;
 $quinary: #bab9f6;
-$success: #198754;
+$success: #149b16;
 $info: #0dcaf0;
 $warning: #ffc107;
 $danger: #dc3545;
@@ -141,7 +141,7 @@ $theme-colors: (
 // @import "@bootstrap/scss/accordion";
 // @import "@bootstrap/scss/breadcrumb";
 // @import "@bootstrap/scss/pagination";
-// @import "@bootstrap/scss/badge";
+@import "@bootstrap/scss/badge";
 // @import "@bootstrap/scss/alert";
 // @import "@bootstrap/scss/progress";
 // @import "@bootstrap/scss/list-group";

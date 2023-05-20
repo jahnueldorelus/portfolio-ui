@@ -107,7 +107,7 @@ export const Home = () => {
   return (
     <Fragment>
       {/* Intro */}
-      <Container className="d-flex flex-column-reverse flex-lg-row text-font-tertiary">
+      <Container className="px-4 d-flex flex-column-reverse flex-lg-row text-font-tertiary">
         <div className="my-4 me-5 d-flex justify-content-center align-items-center w-100">
           <div className="p-4 pb-2 bg-secondary rounded w-100">
             {createIntroColoredText("Website creator using", [
